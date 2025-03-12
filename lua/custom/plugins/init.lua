@@ -16,7 +16,7 @@ vim.opt.colorcolumn = '80'
 -- spell check
 vim.opt.spelllang = 'en_us'
 vim.opt.spell = true
-vim.keymap.set('n', '<leader>e', vim.cmd.Ex)
+vim.keymap.set('n', '<leader>e', vim.cmd.Oil)
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 vim.keymap.set('n', 'J', 'mzJ`z')
@@ -57,5 +57,12 @@ return {
     config = function()
       require('luasnip.loaders.from_vscode').lazy_load()
     end,
+  },
+  {
+    'stevearc/oil.nvim',
+    ---@module 'oil'
+    opts = {},
+    dependencies = { { 'echasnovski/mini.icons', opts = {} } },
+    lazy = false,
   },
 }
